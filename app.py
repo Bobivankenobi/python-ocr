@@ -9,6 +9,10 @@ app = Flask(__name__)
 # Initialize the OCR model outside the route to avoid loading it multiple times
 ocr_model = PaddleOCR(lang='en')
 
+@app.route('/')
+def hello_world():
+	return 'Hello World!'
+
 @app.route('/extract-text', methods=['POST'])
 def extract_text_from_image():
     if 'file' not in request.files:
@@ -49,5 +53,5 @@ def extract_text_from_image():
     return jsonify({'text': full_text})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
 
