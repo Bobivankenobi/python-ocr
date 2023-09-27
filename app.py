@@ -11,7 +11,7 @@ ocr_model = PaddleOCR(lang='en')
 
 @app.route('/')
 def hello_world():
-	return 'Hello World!'
+	return 'Hello svima!'
 
 @app.route('/1')
 def hello_world():
