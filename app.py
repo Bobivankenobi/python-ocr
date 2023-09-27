@@ -13,6 +13,17 @@ ocr_model = PaddleOCR(lang='en')
 def hello_world():
 	return 'Hello World!'
 
+@app.route('/1')
+def hello_world():
+	return 'Hello World1!'
+
+@app.route('/greet', methods=['POST'])
+def greet():
+    data = request.get_json()
+    name = data.get('name', 'Guest')
+    greeting = f'Hello, {name}!'
+    return jsonify({'message': greeting})
+
 @app.route('/extract-text', methods=['POST'])
 def extract_text_from_image():
     if 'file' not in request.files:
