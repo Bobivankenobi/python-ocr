@@ -14,7 +14,7 @@ def hello_world():
 	return 'Hello svima!'
 
 @app.route('/1')
-def hello_world():
+def hello_world1():
 	return 'Hello World1!'
 
 @app.route('/greet', methods=['POST'])
